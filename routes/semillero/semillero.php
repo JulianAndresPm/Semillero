@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\semillero\semilleroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,14 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-// routes/web.php
-Route::group([], function () {
-    // Aquí puedes cargar las rutas definidas en otros archivos
-    include __DIR__.'\semillero\semillero.php';
-    // ...
-});
+Route::get('/semillero', [semilleroController::class, 'index']);
 
