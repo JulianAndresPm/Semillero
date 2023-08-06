@@ -15,6 +15,11 @@ class semilleroController extends Controller
         return view('semilleros.home');
     }
 
+    public function proyectos()
+    {
+        return view('semilleros.proyectos');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
