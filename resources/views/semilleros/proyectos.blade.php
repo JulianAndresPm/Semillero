@@ -1,4 +1,4 @@
-@extends('app')
+@extends('shared.navbar')
 
 <head><link rel="stylesheet" type="text/css" href="/css/proyectos.css"></head>
 

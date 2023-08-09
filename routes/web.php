@@ -13,14 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 // routes/web.php
 Route::group([], function () {
     // Aquí puedes cargar las rutas definidas en otros archivos
     include __DIR__.'\semillero\semillero.php';
+    include __DIR__.'\auth\auth.php';
+
     // ...
 });
 
