@@ -19,6 +19,6 @@ use App\Http\Controllers\semillero\semilleroController;
 // });
 
 Route::get('/semillero', [semilleroController::class, 'index']);
-Route::get('/semillero/proyecto', [semilleroController::class, 'x']);
+Route::get('/semillero/proyecto', [semilleroController::class, 'proyectos']);
 
 
