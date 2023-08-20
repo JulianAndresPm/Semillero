@@ -20,6 +20,32 @@ class semilleroController extends Controller
         return view('semilleros.proyectos');
     }
 
+    public function adicionarProyectos()
+    {
+        return view('semilleros.adicionar');
+    }
+
+    public function editarProyectos()
+    {
+        return view('semilleros.editar');
+    }
+
+    public function editarProyectosUno()
+    {
+        return view('semilleros.editarProyecto');
+    }
+
+    public function adicionarMonitor()
+    {
+
+        return view('semilleros.monitor');
+    }
+
+    public function crearMonitor()
+    {
+
+        return view('semilleros.home');
+    }
     /**
      * Show the form for creating a new resource.
      */

@@ -3,4 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\auth\authController;
 
-Route::get('/', [authController::class, 'index']);
+
+Auth::routes();
+
+Route::get('/', [authController::class, 'login'])->name('login');
+Route::post('/', [authController::class, 'userlogin'])->name('userLogin');
+
+

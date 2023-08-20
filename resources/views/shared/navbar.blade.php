@@ -15,11 +15,25 @@
 <body>
     <nav class="navbar navbar-dark bg-dark nav">
         <div class="container-fluid color">
-            <a class="navbar-brand ">Semillero</a>
-            <form class="d-flex col-6" role="search">
+            <a class="navbar-brand " href="{{route('semillero')}}">Semillero</a>
+            <form class="d-flex col-5" role="search">
                 <input class="form-control  " type="search" placeholder="Buscar" aria-label="Search">
             </form>
-            <button class="btn btn-danger  " type="button" class="btn btn-danger">Salir</button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Opciones
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item"  href="{{route('semilleroAdicionar')}}">Adicionar</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item"  href="{{route('semilleroEditar')}}">Editar</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{{route('adicionarMonitor')}}">Asignar Monitor</a></li>
+  
+                </ul>
+            </div>
+            <a class="btn btn-danger " href="{{route('login')}}">Salir</a>
+
         </div>
     </nav>
 
