@@ -4,21 +4,12 @@ namespace App\Http\Controllers\auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Models\login;
 
 
 
 class authController extends Controller
 {
-    use AuthenticatesUsers;
-
-    protected $redirectTo = '/semillero';
-
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
-    }
 
 
     public function login()
@@ -26,10 +17,21 @@ class authController extends Controller
         return view('login.login');
     }
 
-    public function userlogin()
+    public function userlogin(Request $r)
     {
+        $usario = new login();
+        $usario->usuario = $r->input('usuario');
+        $usario->password = $r->input('password');
 
-        return view('semilleros.home');
+        $respuesta = login::where('usuario', 'LIKE', '%' .  $usario->usuario . '%')
+                            ->Where('password', 'LIKE','%' .  $usario->password . '%')
+                            ->get();
+ 
+        if ($respuesta->isEmpty()) {
+            return view('login.login'); 
+        } else {
+            return view('semilleros.home', ['respuesta' => $respuesta]);
+        }
     }
 
    

@@ -13,16 +13,16 @@
 
   <link rel="stylesheet" href="/css/login.css">
 
-    <form class="d-flex flex-column align-content-center flex-wrap" action= "{{route('userLogin')}}" method= "POST">
+    <form class="d-flex flex-column align-content-center flex-wrap" action= "{{route('userLogin')}}" method= "GET">
       @csrf
 
       <div class="form-outline mb-4 col-3">
-        <input type="email" id="form2Example1" class="form-control" require />
-        <label class="form-label" for="form2Example1">Usuario</label>
+        <input type="text" id="form2Example1" class="form-control" name="usuario" />
+        <label class="form-label" for="form2Example1" >Usuario</label>
       </div>
     
       <div class="form-outline mb-4 col-3">
-        <input type="password" id="form2Example2" class="form-control" require/>
+        <input type="password" id="form2Example2" class="form-control" name="password"/>
         <label class="form-label" for="form2Example2">Contraseña</label>
       </div>
     
